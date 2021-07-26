@@ -1,0 +1,13 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../tiket_flutter_module/.android/include_flutter.groovy'
+))
+rootProject.name = "TiketApps"
+
+include ':tiket_flutter_module'
+project(':tiket_flutter_module').projectDir = new File('../tiket_flutter_module')
+
+include ':tiket_flutter_module'
+project(':tiket_flutter_module').projectDir = new File('../tiket_flutter_module')
